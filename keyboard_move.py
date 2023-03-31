@@ -2,8 +2,14 @@ import time
 import keyboard
 from pymavlink import mavutil
 
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+while True:
+    msg = master.recv_match(type='HEARTBEAT', blocking=True)
+    if msg.get_type() == 'HEARTBEAT':
+        print(f"System ID: {msg.get_srcSystem()}")
+        break
 # Set up the connection to the ArduSub vehicle
-master = mavutil.mavlink_connection('com4')
+
 
 
 # Arm
