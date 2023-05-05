@@ -3,7 +3,7 @@ import time
 from pymavlink import mavutil
 
 # Set up the connection to the autopilot
-master = mavutil.mavlink_connection('com4')
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
 # Wait for the heartbeat message to find the system ID
 master.wait_heartbeat()
 

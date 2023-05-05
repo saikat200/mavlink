@@ -109,17 +109,25 @@ while True:
         if keyboard.is_pressed('a'):
             fixed_value = fused_heading
             print(f"Fixed value: {fixed_value}")
+        elif keyboard.is_pressed('x'):
+            stop()
+            print('stop')
+            break
 
         # Check if fixed_value has been set
         elif fixed_value is not None:
             # Check if fused_heading is lower than fixed_value
             if fused_heading >= fixed_value - 3 and fused_heading <= fixed_value + 3:
                 print('forward')
+                go_forward(600)
             elif fused_heading < fixed_value:
                 print('left')
+                go_lateral_left(600)
             # Check if fused_heading is higher than fixed_value
             elif fused_heading > fixed_value:
                 print('right')
+                go_lateral_right(600)
+
             # If fused_heading equals fixed_value
 
 

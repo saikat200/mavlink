@@ -13,6 +13,7 @@ master.wait_heartbeat()
 
 # Arm
 # master.arducopter_arm() or:
+
 master.mav.command_long_send(
     master.target_system,
     master.target_component,
@@ -25,8 +26,8 @@ print("Waiting for the vehicle to arm")
 master.motors_armed_wait()
 print('Armed!')
 
-# Disarm
-# master.arducopter_disarm() or:
+#Disarm
+#master.arducopter_disarm() or:
 master.mav.command_long_send(
     master.target_system,
     master.target_component,

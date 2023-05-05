@@ -3,7 +3,7 @@ import threading
 from pymavlink import mavutil
 
 # Set up the connection to the ArduSub vehicle
-master = mavutil.mavlink_connection('com4')
+master = mavutil.mavlink_connection('com5')
 
 
 # Arm
