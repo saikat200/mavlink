@@ -3,7 +3,7 @@ import math
 from pymavlink import mavutil
 
 # Create the connection
-master = mavutil.mavlink_connection('com5')
+master = mavutil.mavlink_connection('com4')
 
 # Wait for the heartbeat message to find the system ID
 while True:
